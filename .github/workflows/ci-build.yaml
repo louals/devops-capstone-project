@@ -28,9 +28,7 @@ jobs:
           flake8 service tests --count --max-complexity=10 --max-line-length=127 --statistics
 
       - name: Run unit tests with pytest
+        env:
+          DATABASE_URI: "sqlite:///test.db"
         run: |
           pytest
-
-
-
-          
